@@ -1,43 +1,3 @@
-# import os
-# import streamlit as st
-# from dotenv import load_dotenv
-# from openai import OpenAI
-
-
-# load_dotenv()
-
-
-# api_key = os.getenv("FIREWORKS_API_KEY")
-
-# if not api_key:
-#     st.error("🔥 FIREWORKS_API_KEY not found in environment variables. Please set it in your .env file.")
-#     st.stop()
-
-
-# client = OpenAI(
-#     api_key=api_key,
-#     base_url="https://api.fireworks.ai/inference/v1"
-# )
-
-# st.title("🧠 Assistente AI con Fireworks.ai")
-
-# user_input = st.text_area("Fai una domanda:", height=150)
-
-# if user_input:
-#     with st.spinner("AI sta rispondendo..."):
-#         try:
-#             response = client.chat.completions.create(
-#                 model="accounts/fireworks/models/mixtral-8x7b-instruct",
-#                 messages=[{"role": "user", "content": user_input}],
-#                 max_tokens=300,
-#                 temperature=0.7,
-#             )
-#             answer = response.choices[0].message.content
-#             st.markdown("### 🤖 Risposta dell'AI:")
-#             st.write(answer)
-#         except Exception as e:
-#             st.error(f"Errore durante la chiamata API: {e}")
-
 import streamlit as st
 from dotenv import load_dotenv
 import os
@@ -58,10 +18,9 @@ def load_model():
     if not api_key:
         st.error("🔥 FIREWORKS_API_KEY non trovato nelle variabili d'ambiente.")
         st.stop()
-    # Initialize Fireworks LLM client with your API key
     llm = LLM(
         api_key=api_key,
-        model="accounts/fireworks/models/llama-v3p1-405b-instruct",  # Your model here
+        model="accounts/fireworks/models/llama-v3p1-405b-instruct",  
         deployment_type="serverless"
     )
     return llm

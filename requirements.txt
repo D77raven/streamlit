@@ -3,6 +3,7 @@ requests
 pandas
 beautifulsoup4
 langchain
-openai>=1.1.0
+fireworks
+fireworks-ai
 langchain-community
 python-dotenv
