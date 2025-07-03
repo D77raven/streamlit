@@ -4,12 +4,9 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from web_scraping import get_data
 
-
 load_dotenv()
 
-
-api_key = os.getenv("api_key")
-client = OpenAI(api_key=api_key)
+client = OpenAI()
 
 st.title("🧠 Assistente AI per le Recensioni di Ristoranti")
 
