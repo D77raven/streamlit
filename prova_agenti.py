@@ -6,7 +6,7 @@ from web_scraping import get_data
 
 load_dotenv()
 
-client = OpenAI()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 st.title("🧠 Assistente AI per le Recensioni di Ristoranti")
 

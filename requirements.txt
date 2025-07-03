@@ -3,5 +3,6 @@ requests
 pandas
 beautifulsoup4
 langchain
-openai
-langchain_community 
+openai>=1.1.0
+langchain-community
+python-dotenv
