@@ -14,7 +14,8 @@ def load_reviews():
 
 @st.cache_resource
 def load_model():
-    api_key = os.getenv("FIREWORKS_API_KEY")
+    #api_key = os.getenv("FIREWORKS_API_KEY")
+    api_key = st.secrets["FIREWORKS_API_KEY"]
     if not api_key:
         st.error("🔥 FIREWORKS_API_KEY non trovato nelle variabili d'ambiente.")
         st.stop()
